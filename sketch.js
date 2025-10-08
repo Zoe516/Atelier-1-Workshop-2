@@ -1,7 +1,12 @@
-function setup() {
-  createCanvas(400, 400);
-  colorMode(HSB);
+let img;
 
+function preload(){
+  img = loadImage('kalem.gif');
+}
+
+function setup() {
+  createCanvas(img.width, img.height);
+  colorMode(HSB);
   // Set angle mode so that atan2() returns angles in degrees
   angleMode(DEGREES);
 
@@ -9,12 +14,11 @@ function setup() {
 }
 
 function draw() {
-  background(0);
-
+  background(img);
   // Draw left eye
 
-  let leftX = 150;
-  let leftY = 200;
+  let leftX = 650;
+  let leftY = 630;
 
   // Calculate angle between left eye and mouse
   let leftAngle = atan2(mouseY - leftY, mouseX - leftX);
@@ -22,16 +26,16 @@ function draw() {
   push();
   translate(leftX, leftY);
   fill(255);
-  ellipse(0, 0, 50, 50);
+  ellipse(0, 0, 200, 200);
   rotate(leftAngle);
   fill(0);
-  ellipse(12.5, 0, 25, 25);
+  ellipse(12.5, 0, 100, 100);
   pop();
 
   // Draw right eye
 
-  let rightX = 250;
-  let rightY = 200;
+  let rightX = 900;
+  let rightY = 630;
 
   // Calculate angle between right eye and angle
   let rightAngle = atan2(mouseY - rightY, mouseX - rightX);
@@ -39,9 +43,9 @@ function draw() {
   push();
   translate(rightX, rightY);
   fill(255);
-  ellipse(0, 0, 50, 50);
+  ellipse(0, 0, 200, 200);
   rotate(rightAngle);
   fill(0);
-  ellipse(12.5, 0, 25, 25);
+  ellipse(12.5, 0, 100, 100);
   pop();
 }
