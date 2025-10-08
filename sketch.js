@@ -1,11 +1,12 @@
-let img;
+let gif;
 
 function preload(){
-  img = loadImage('kalem.gif');
+  gif = loadImage('kalem.gif');
 }
 
 function setup() {
-  createCanvas(img.width, img.height);
+  lockGestures();
+  createCanvas(gif.width, gif.height);
   colorMode(HSB);
   // Set angle mode so that atan2() returns angles in degrees
   angleMode(DEGREES);
@@ -14,7 +15,7 @@ function setup() {
 }
 
 function draw() {
-  background(img);
+  background(gif);
   // Draw left eye
 
   let leftX = 650;
@@ -48,4 +49,11 @@ function draw() {
   fill(0);
   ellipse(12.5, 0, 100, 100);
   pop();
+}
+
+function mousePressed(){
+  gif.play();
+}
+function mouseReleased(){
+  gif.pause();
 }
