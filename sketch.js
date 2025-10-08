@@ -1,16 +1,5 @@
-let img;
-
-// Load the image and create a p5.Image object.
-function preload() {
-  img = loadImage('kalem.gif');
-}
-
-
 function setup() {
-  createCanvas(1174, 705);
-
-  image(img, 0, 0);
-
+  createCanvas(400, 400);
   colorMode(HSB);
 
   // Set angle mode so that atan2() returns angles in degrees
@@ -20,12 +9,12 @@ function setup() {
 }
 
 function draw() {
-  background(img);
+  background(0);
 
   // Draw left eye
 
-  let leftX = 550;
-  let leftY = 350;
+  let leftX = 150;
+  let leftY = 200;
 
   // Calculate angle between left eye and mouse
   let leftAngle = atan2(mouseY - leftY, mouseX - leftX);
@@ -41,8 +30,8 @@ function draw() {
 
   // Draw right eye
 
-  let rightX = 675;
-  let rightY = 350;
+  let rightX = 250;
+  let rightY = 200;
 
   // Calculate angle between right eye and angle
   let rightAngle = atan2(mouseY - rightY, mouseX - rightX);
