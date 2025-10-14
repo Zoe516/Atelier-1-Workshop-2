@@ -19,14 +19,7 @@ function setup() {
 
 function draw() {
   apex = gif;
-  for(let touch of touches){
-    if (touch.X >= 0 && touch.X <= 550){
-      apex = gif;
-    }
-    if (touch.X >= 551 && touch.X <= 1100){
-      apex = gif2;
-    }
-  }
+  
   background(apex);  
   // Draw left eye
 
@@ -63,7 +56,8 @@ function draw() {
   pop();
 }
 
-//function touches(){
-
-//}
+function deviceShaken(){
+  apex = gif2;
+  background(apex); 
+}
 
