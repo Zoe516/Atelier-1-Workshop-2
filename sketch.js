@@ -1,6 +1,7 @@
 let gif;
 let gif2;
 let apex;
+let myColor
 
 function preload(){
   gif = loadImage('kalem.gif');
@@ -15,7 +16,7 @@ function setup() {
   angleMode(DEGREES);
 
   describe('Two eyes that follow the cursor.');
-  let myColor = color(0,0,0);
+  myColor = color(0,0,0);
 }
 
 function draw() {
