@@ -29,7 +29,7 @@ function draw() {
   // Draw left eye
   image(gif, 0, 0, gif.width, gif.height);
 
-  tint(255, 255, 255, topTransparency);
+  tint(255, topTransparency);
   image(gif2, 0, 0, gif.width, gif.height);
   
   
@@ -72,7 +72,7 @@ function deviceShaken(){
   //  apex = gif2;
   //else
   //  apex = gif;
-  topTransparency -= 2;
+  topTransparency = topTransparency 2;
   if(topTransparency < 0) {
     topTransparency = 0;
   }
