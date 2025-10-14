@@ -72,7 +72,7 @@ function deviceShaken(){
   //  apex = gif2;
   //else
   //  apex = gif;
-  topTransparency = topTransparency 2;
+  topTransparency = topTransparency - 2;
   if(topTransparency < 0) {
     topTransparency = 0;
   }
