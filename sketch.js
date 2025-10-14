@@ -1,8 +1,9 @@
 let gif;
 let gif2;
 let apex;
-let myColor
-let topTransparency;
+let myColor;
+let movingX;
+let movingY;
 
 function preload(){
   gif = loadImage('kalem.gif');
@@ -19,7 +20,6 @@ function setup() {
 
   describe('Two eyes that follow the cursor.');
   myColor = color(0,0,0);
-  topTransparency = 255;
 }
 
 function draw() {
@@ -27,11 +27,11 @@ function draw() {
   
   //background(apex);  
   // Draw left eye
-  tint(255, 255);
+  
   image(gif, 0, 0, gif.width, gif.height);
 
-  tint(255, 64);
-  image(gif2, 0, 0, gif.width, gif.height);
+ 
+  image(gif2, movingX, movingY, gif.width, gif.height);
   
   
   let leftX = 650;
@@ -73,10 +73,7 @@ function deviceShaken(){
   //  apex = gif2;
   //else
   //  apex = gif;
-  //topTransparency = topTransparency - 2;
-  //if(topTransparency < 0) {
-  //  topTransparency = 0;
-  //}
+  movingY = movingY + 10;
   background(255);
  
 }
