@@ -1,7 +1,10 @@
 let gif;
+let gif2;
+let apex;
 
 function preload(){
   gif = loadImage('kalem.gif');
+  gif2 = loadImage('Cat.gif');
 }
 
 function setup() {
@@ -15,7 +18,7 @@ function setup() {
 }
 
 function draw() {
-  background(gif);
+  background(apex);
   // Draw left eye
 
   let leftX = 650;
@@ -30,7 +33,7 @@ function draw() {
   ellipse(0, 0, 200, 200);
   rotate(leftAngle);
   fill(0);
-  ellipse(12.5, 0, 100, 100);
+  ellipse(50, 0, 100, 100);
   pop();
 
   // Draw right eye
@@ -47,13 +50,16 @@ function draw() {
   ellipse(0, 0, 200, 200);
   rotate(rightAngle);
   fill(0);
-  ellipse(12.5, 0, 100, 100);
+  ellipse(50, 0, 100, 100);
   pop();
 }
 
-function mousePressed(){
-  gif.play();
+function touches(){
+  if (touches.X >= 0 && touches.X <= 550){
+    apex = gif;
+  }
+  if (touches.X >= 551 && touches.X <= 1100){
+    apex = gif2;
+  }
 }
-function mouseReleased(){
-  gif.pause();
-}
+
