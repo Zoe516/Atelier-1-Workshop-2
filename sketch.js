@@ -15,6 +15,7 @@ function setup() {
   angleMode(DEGREES);
 
   describe('Two eyes that follow the cursor.');
+  let myColor = color(0,0,0);
 }
 
 function draw() {
@@ -34,7 +35,7 @@ function draw() {
   fill(255);
   ellipse(0, 0, 200, 200);
   rotate(leftAngle);
-  fill(0);
+  fill(myColor);
   ellipse(50, 0, 100, 100);
   pop();
 
@@ -51,13 +52,15 @@ function draw() {
   fill(255);
   ellipse(0, 0, 200, 200);
   rotate(rightAngle);
-  fill(0);
+  fill(myColor);
   ellipse(50, 0, 100, 100);
   pop();
 }
 
 function deviceShaken(){
+  myColor = color(random(360), 80, 80);
   apex = gif2;
   background(apex); 
+
 }
 
