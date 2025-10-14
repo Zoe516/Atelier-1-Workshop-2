@@ -2,8 +2,8 @@ let gif;
 let gif2;
 let apex;
 let myColor;
-let movingX;
-let movingY;
+let movingX;  //to move the front image (not being used now)
+let movingY;  //to move the front image down
 
 function preload(){
   gif = loadImage('kalem.gif');
@@ -20,22 +20,23 @@ function setup() {
 
   describe('Two eyes that follow the cursor.');
   myColor = color(0,0,0);
-  movingX = 0;
-  movingY = 0;
+  movingX = 0;  //set the start values of x
+  movingY = 0;  //set the start values of y
 }
 
 function draw() {
   //apex = gif;
   
   //background(apex);  
-  // Draw left eye
-  
-  image(gif, 0, 0, gif.width, gif.height);
-
  
+  //back image
+  image(gif, 0, 0, gif.width, gif.height);
+  //front image
   image(gif2, movingX, movingY, gif.width, gif.height);
   
   
+  
+  // Draw left eye
   let leftX = 650;
   let leftY = 630;
 
@@ -75,7 +76,7 @@ function deviceShaken(){
   //  apex = gif2;
   //else
   //  apex = gif;
-  movingY = movingY + 10;
+  movingY = movingY + 10;  //move the front image down
   background(255);
  
 }
