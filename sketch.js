@@ -11,7 +11,7 @@ function preload(){
 }
 
 function setup() {
-  //lockGestures();
+  lockGestures();
   createCanvas(gif.width, gif.height);
   colorMode(HSB);
   // Set angle mode so that atan2() returns angles in degrees
