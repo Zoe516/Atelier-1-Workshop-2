@@ -25,7 +25,7 @@ function draw() {
   
   //background(apex);  
   // Draw left eye
-  image(apex, 0, 0, canvas.width, canvas.height);
+  image(apex, 0, 0, gif.width, gif.height);
   let leftX = 650;
   let leftY = 630;
 
@@ -61,7 +61,10 @@ function draw() {
 
 function deviceShaken(){
   myColor = color(random(360), 80, 80);
-  apex = gif2;
+  if(apex == gif)
+    apex = gif2;
+  else
+    apex = gif;
   background(255);
  
 }
