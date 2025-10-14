@@ -22,6 +22,11 @@ function setup() {
   myColor = color(0,0,0);
   movingX = 0;  //set the start values of x
   movingY = 0;  //set the start values of y
+
+  // Create a button to request motion permissions
+  let button = createButton('Enable Motion Sensors');
+  button.position(width / 2 - button.width / 2, height / 2);
+  button.mousePressed(requestMotionPermission);
 }
 
 function draw() {
@@ -81,3 +86,22 @@ function deviceShaken(){
  
 }
 
+
+    // Function to request motion permissions on iOS devices
+    function requestMotionPermission() {
+      // Check if the DeviceMotionEvent.requestPermission function exists (iOS 13+)
+      if (typeof DeviceMotionEvent.requestPermission === 'function') {
+        DeviceMotionEvent.requestPermission()
+          .then(permissionState => {
+            if (permissionState === 'granted') {
+              console.log('Motion sensor access granted.');
+            } else {
+              console.log('Motion sensor access denied.');
+            }
+          })
+          .catch(console.error);
+      } else {
+        // Handle older iOS versions or other browsers where permission isn't required
+        console.log('DeviceMotionEvent.requestPermission not available or not needed.');
+      }
+    }
