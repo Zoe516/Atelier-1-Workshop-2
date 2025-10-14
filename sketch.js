@@ -29,8 +29,10 @@ function draw() {
   // Draw left eye
   image(gif, 0, 0, gif.width, gif.height);
 
-  tint(255, topTransparency);
+  tint(255, 255, 255, topTransparency);
   image(gif2, 0, 0, gif.width, gif.height);
+  
+  
   let leftX = 650;
   let leftY = 630;
 
