@@ -20,6 +20,8 @@ function setup() {
 
   describe('Two eyes that follow the cursor.');
   myColor = color(0,0,0);
+  movingX = 0;
+  movingY = 0;
 }
 
 function draw() {
