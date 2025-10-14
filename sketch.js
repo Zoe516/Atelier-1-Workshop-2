@@ -8,7 +8,7 @@ function preload(){
 }
 
 function setup() {
-  lockGestures();
+  //lockGestures();
   createCanvas(gif.width, gif.height);
   colorMode(HSB);
   // Set angle mode so that atan2() returns angles in degrees
@@ -18,7 +18,16 @@ function setup() {
 }
 
 function draw() {
-  background(apex);
+  apex = gif;
+  for(let touch of touches){
+    if (touch.X >= 0 && touch.X <= 550){
+      apex = gif;
+    }
+    if (touch.X >= 551 && touch.X <= 1100){
+      apex = gif2;
+    }
+  }
+  background(apex);  
   // Draw left eye
 
   let leftX = 650;
@@ -54,12 +63,7 @@ function draw() {
   pop();
 }
 
-function touches(){
-  if (touches.X >= 0 && touches.X <= 550){
-    apex = gif;
-  }
-  if (touches.X >= 551 && touches.X <= 1100){
-    apex = gif2;
-  }
-}
+//function touches(){
+
+//}
 
