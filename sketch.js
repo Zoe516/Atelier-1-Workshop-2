@@ -14,17 +14,18 @@ function setup() {
   colorMode(HSB);
   // Set angle mode so that atan2() returns angles in degrees
   angleMode(DEGREES);
+  apex = gif;
 
   describe('Two eyes that follow the cursor.');
   myColor = color(0,0,0);
 }
 
 function draw() {
-  apex = gif;
+  //apex = gif;
   
-  background(apex);  
+  //background(apex);  
   // Draw left eye
-
+  image(apex, 0, 0, apex.width, apex.height);
   let leftX = 650;
   let leftY = 630;
 
@@ -61,7 +62,6 @@ function draw() {
 function deviceShaken(){
   myColor = color(random(360), 80, 80);
   apex = gif2;
-  background(apex); 
-
+ 
 }
 
