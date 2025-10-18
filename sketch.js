@@ -24,7 +24,7 @@ function setup() {
   let button = createButton('Enable Motion Sensors');
   button.position(width / 2 - button.width / 2, height / 2);
   button.mousePressed(requestMotionPermission);
-  textSize(16);
+  textSize(24);
   fill(255);
   stroke(0);
   strokeWeight(2);
@@ -36,11 +36,11 @@ function draw() {
   //background(apex);  
  
   //back image
-  image(gif, 0, 0, gif.width, gif.height);
+  image(gif, 0, 0, gif.width*2, gif.height*2);
   //front image
-  image(gif2, movingX, movingY, gif.width, gif.height);
-  text('Shake your device to reveal', 5, height - 700);
-  text('whats underneath the ghost sheet!', 5, height - 680);
+  image(gif2, movingX, movingY, gif.width*2, gif.height*2);
+  text('Shake your device to reveal', 5, height - 440);
+  text('whats underneath the ghost sheet!', 5, height - 400);
 }
 
 function deviceShaken(){
