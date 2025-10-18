@@ -17,6 +17,8 @@ function setup() {
   // Set angle mode so that atan2() returns angles in degrees
   angleMode(DEGREES);
   apex = gif;
+  movingX = 0;  //set the start values of x
+  movingY = 0; 
 
   // Create a button to request motion permissions
   let button = createButton('Enable Motion Sensors');
@@ -42,12 +44,7 @@ function draw() {
 }
 
 function deviceShaken(){
-  myColor = color(random(360), 80, 80);
-  //if(apex == gif)
-  //  apex = gif2;
-  //else
-  //  apex = gif;
-  movingY = movingY - 10;  //move the front image down
+  movingY = movingY - 10;  //move the front image up
   background(255);
  
 }
