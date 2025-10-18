@@ -38,41 +38,6 @@ function draw() {
   image(gif, 0, 0, gif.width, gif.height);
   //front image
   image(gif2, movingX, movingY, gif.width, gif.height);
-  
-  
-  
-  // Draw left eye
-  let leftX = 650;
-  let leftY = 630;
-
-  // Calculate angle between left eye and mouse
-  let leftAngle = atan2(mouseY - leftY, mouseX - leftX);
-
-  push();
-  translate(leftX, leftY);
-  fill(255);
-  ellipse(0, 0, 200, 200);
-  rotate(leftAngle);
-  fill(myColor);
-  ellipse(50, 0, 100, 100);
-  pop();
-
-  // Draw right eye
-
-  let rightX = 900;
-  let rightY = 630;
-
-  // Calculate angle between right eye and angle
-  let rightAngle = atan2(mouseY - rightY, mouseX - rightX);
-
-  push();
-  translate(rightX, rightY);
-  fill(255);
-  ellipse(0, 0, 200, 200);
-  rotate(rightAngle);
-  fill(myColor);
-  ellipse(50, 0, 100, 100);
-  pop();
 }
 
 function deviceShaken(){
