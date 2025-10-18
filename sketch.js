@@ -18,15 +18,14 @@ function setup() {
   angleMode(DEGREES);
   apex = gif;
 
-  describe('Two eyes that follow the cursor.');
-  myColor = color(0,0,0);
-  movingX = 0;  //set the start values of x
-  movingY = 0;  //set the start values of y
-
   // Create a button to request motion permissions
   let button = createButton('Enable Motion Sensors');
   button.position(width / 2 - button.width / 2, height / 2);
   button.mousePressed(requestMotionPermission);
+  textSize(16);
+  fill(255);
+  stroke(0);
+  strokeWeight(2);
 }
 
 function draw() {
@@ -38,6 +37,8 @@ function draw() {
   image(gif, 0, 0, gif.width, gif.height);
   //front image
   image(gif2, movingX, movingY, gif.width, gif.height);
+  text('Shake your device to reveal', 5, height - 700);
+  text('whats underneath the ghost sheet!', 5, height - 680);
 }
 
 function deviceShaken(){
@@ -46,7 +47,7 @@ function deviceShaken(){
   //  apex = gif2;
   //else
   //  apex = gif;
-  movingY = movingY + 10;  //move the front image down
+  movingY = movingY - 10;  //move the front image down
   background(255);
  
 }
