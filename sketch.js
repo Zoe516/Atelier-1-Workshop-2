@@ -39,8 +39,8 @@ function draw() {
   image(gif, 0, 0, gif.width*2, gif.height*2);
   //front image
   image(gif2, movingX, movingY, gif.width*2, gif.height*2);
-  text('Shake your device to reveal', 5, height - 440);
-  text('whats underneath the ghost sheet!', 5, height - 400);
+  text('Shake your phone to find out', 5, height - 440);
+  text('whats hiding behind the ghost!', 5, height - 400);
 }
 
 function deviceShaken(){
