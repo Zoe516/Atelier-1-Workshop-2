@@ -6,8 +6,8 @@ let movingX;  //to move the front image (not being used now)
 let movingY;  //to move the front image down
 
 function preload(){
-  gif = loadImage('kalem.gif');
-  gif2 = loadImage('Cat.gif');
+  gif = loadImage('ghost.gif');
+  gif2 = loadImage('pumpkin.gif');
 }
 
 function setup() {
