@@ -6,13 +6,13 @@ let movingX;  //to move the front image (not being used now)
 let movingY;  //to move the front image down
 
 function preload(){
-  gif = loadImage('ghost.gif');
-  gif2 = loadImage('pumpkin.gif');
+  gif = loadImage('pumpkin.gif');
+  gif2 = loadImage('ghost.gif');
 }
 
 function setup() {
   lockGestures();
-  createCanvas(gif.width, gif.height);
+  createCanvas(gif.width*2, gif.height*2);
   colorMode(HSB);
   // Set angle mode so that atan2() returns angles in degrees
   angleMode(DEGREES);
